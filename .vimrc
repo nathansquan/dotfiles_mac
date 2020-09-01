@@ -1,7 +1,7 @@
 filetype plugin indent on
 
 syntax on
-
+"this is a comment
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
