@@ -60,7 +60,7 @@ augroup pencil
 
 
 " vim-pandoc
-let g:pandoc#fileypes#handled = ["pandoc", "markdown"]
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
 let g:pandoc#modules#disabled = ["folding"]
 "Allow vim-pandoc auto execute pandoc on writes
 let g:pandoc#command#autoexec_on_writes = 1
@@ -69,4 +69,4 @@ let g:pandoc#command#autoexec_command = "Pandoc! pdf"
 let g:pandoc#biblio#use_bibtool = 1
 let g:pandoc#completion#bib#mode = 'citeproc'
 "let g:pandoc#biblio#sources = 'g'
-let g:pandoc#biblio#bibs = ["Documents/Notes/global.bib"]
+let g:pandoc#biblio#bibs = ["/Users/nathansquan/Documents/Notes/Papers/global.bib"]
