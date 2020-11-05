@@ -1,6 +1,11 @@
 # added by Anaconda3 4.2.0 installer
 export PATH="/Users/nathansquan/anaconda/bin:$PATH"
-
+# add gnu grep to PATH as grep
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+# add gnu-sed to PATH as sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# add gnu coreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 
 # Takes a DOI input and creates a bibtex entry 
@@ -33,7 +38,7 @@ pdf2doi () {
 
 set -e
 
-pdftotext "$1" - | grep -oP "\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&\'<>])\S)+)\b" | head -n 1
+pdftotext "$1" - | grep -oP "\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&\'<>])\S)+)\b"
 
 }
 
@@ -79,7 +84,7 @@ EOF
 check_file() {
     file="$HOME/Documents/Notes/Papers/$1.md"
     if [[ -f $file ]]; then
-        file_doi=$(jrep -o -E "doi = {[^}]*" $file | cut -d{ -f2)
+        file_doi=$(grep -o -E "doi = {[^}]*" $file | cut -d{ -f2)
         if [[ "${file_doi,,}" =~ "${doi,,}" ]]; then
             file_name="$file"
         else

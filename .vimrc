@@ -70,4 +70,4 @@ let g:pandoc#command#autoexec_command = "Pandoc! pdf"
 let g:pandoc#biblio#use_bibtool = 1
 let g:pandoc#completion#bib#mode = 'citeproc'
 "let g:pandoc#biblio#sources = 'g'
-let g:pandoc#biblio#bibs = ["/Users/nathansquan/Documents/Notes/Papers/global.bib"]
+let g:pandoc#biblio#bibs = ["/Users/nathansquan/Documents/Notes/global.bib"]
