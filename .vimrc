@@ -16,6 +16,7 @@ Plug 'reedes/vim-lexical' " Better spellcheck mappings
 Plug 'reedes/vim-litecorrect' " Better autocorrections
 Plug 'reedes/vim-textobj-sentence' " Treat sentences as text objects
 Plug 'reedes/vim-wordy' " Weasel words and passive voice
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Options
@@ -23,7 +24,7 @@ set encoding=utf-8
 set fileencodings=utf-8
 set textwidth=80
 set number "Line numbering
-colorscheme seoul256
+colorscheme nord
 set background=dark
 
 " Goyo remap
