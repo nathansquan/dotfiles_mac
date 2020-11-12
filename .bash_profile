@@ -54,7 +54,7 @@ notate_paper () {
 set -e
 
 pdf="$1"
-doi="$(pdf2doi ${1})"
+doi="$(pdf2doi ${1} | head -1)"
 bib=$(curl -s "http://api.crossref.org/works/$doi/transform/application/x-bibtex")
 title=$(echo "$bib" | sed -n '1p' | cut -d{ -f2 | sed 's/,//')
 file_name=
@@ -67,7 +67,7 @@ cat >"$file_name" <<EOF
 ---
 title: $title Notes
 author: Nathan Quan
-csl: /home/nathan/.csl/
+csl: /Users/nathansquan/.csl/
 ---
 ~~~.bib
 $bib
