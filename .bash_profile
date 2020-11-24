@@ -78,6 +78,8 @@ $bib
 
 # Questions
 
+# Further Reading
+
 EOF
 }
 
@@ -136,6 +138,8 @@ $bib
 
 # Questions
 
+# Further Reading
+
 EOF
 }
 
@@ -192,6 +196,8 @@ $bib
 # Quotes and Data
 
 # Questions
+
+# Further Reading
 
 EOF
 }
