@@ -39,9 +39,33 @@ pdf2doi () {
 set -e
 
 pdftotext "$1" - | grep -oP "\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&\'<>])\S)+)\b"
-
 }
 
+id2bib () {
+#!/bin/bash
+
+# Takes a ISBN input and  creates a bibtex entry
+# Zotero translation-server
+# Based on zotero translation-server translate_search and translate_export
+# Retrieves metadata from an identifier (DOI, ISBN, PMID, arXiv ID)
+# Then converts item in Zotero API JSON format to bibtex
+# Requires Node.js and translation server source code
+# git clone --recurse-submodules https://github.com/zotero/translation-server
+# Connect to server by npm start
+# Author: Nathan Quan
+# License: GPL
+
+set -e
+
+json=
+result=
+
+json=$(curl -d $1 -H 'Content-Type: text/plain' http://127.0.0.1:1969/search)
+
+result=$(curl -v -d "$json" -H "Content-Type: application/json" "http://127.0.0.1:1969/export?format=bibtex")
+
+echo "$result"
+}
 
 # Takes a pdf file name, finds the doi, creates a .md file with the same name as the pdf to take notes on
 notate_paper () {
