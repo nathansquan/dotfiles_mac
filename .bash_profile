@@ -96,6 +96,7 @@ csl: /Users/nathansquan/.csl/
 ~~~.bib
 $bib
 ~~~
+
 # Summary
 
 # Quotes and Data
@@ -156,6 +157,7 @@ csl: /home/nathan/.csl/
 ~~~.bib
 $bib
 ~~~
+
 # Summary
 
 # Quotes and Data
@@ -215,6 +217,7 @@ csl: /home/nathan/.csl/
 ~~~.bib
 $bib
 ~~~
+
 # Summary
 
 # Quotes and Data
