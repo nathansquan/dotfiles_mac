@@ -26,7 +26,9 @@ set textwidth=80
 set number "Line numbering
 colorscheme nord
 set background=dark
-
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
 " Goyo remap
 nnoremap <C-g> :Goyo<CR>
 
