@@ -20,8 +20,9 @@ set -e
 
 result=
 i=
+doi=[[ ${1,,} = no ]]
 while [[ $i < 10 && "$result" != *"author = "* ]]; do
-    result=$(curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex")
+    result=$(curl -s "http://api.crossref.org/works/$doi/transform/application/x-bibtex")
     i=$(( $i + 1 ))
 done
 echo "$result"
