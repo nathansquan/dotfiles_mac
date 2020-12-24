@@ -20,7 +20,8 @@ set -e
 
 result=
 i=
-doi=[[ ${1,,} = no ]]
+# convert input doi into all lower case
+doi=$(echo "$1" | awk '{print tolower($0)}')
 while [[ $i < 10 && "$result" != *"author = "* ]]; do
     result=$(curl -s "http://api.crossref.org/works/$doi/transform/application/x-bibtex")
     i=$(( $i + 1 ))
@@ -80,7 +81,7 @@ set -e
 
 pdf="$1"
 doi="$(pdf2doi ${1} | head -1)"
-bib=$(curl -s "http://api.crossref.org/works/$doi/transform/application/x-bibtex")
+bib="$(doi2bib "$doi")"
 title=$(echo "$bib" | sed -n '1p' | cut -d{ -f2 | sed 's/,//')
 file_name=
 
